@@ -7,17 +7,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.madlevel2task2.databinding.ItemVragenlijstBinding
 import kotlinx.android.synthetic.main.item_vragenlijst.view.*
 
-class vragenAdapter(private val Vragen: List<Vragenlijst>) : RecyclerView.Adapter<vragenAdapter.ViewHolder>(){
+class vragenAdapter(private val Vragen: List<Vragenlijst>) : RecyclerView.Adapter<vragenAdapter.ViewHolder>() {
 
 
-    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-
-        val binding = ItemVragenlijstBinding.bind(itemView)
-
-        fun databind(reminder: Vragenlijst) {
-            binding.tvVragenlijst.text = reminder.vragenText
-        }
-    }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(
             LayoutInflater.from(parent.context).inflate(R.layout.item_vragenlijst, parent, false)
@@ -38,5 +30,13 @@ class vragenAdapter(private val Vragen: List<Vragenlijst>) : RecyclerView.Adapte
         holder.databind(Vragen[position])
     }
 
+    inner class ViewHolder(itemView: View) :
+        RecyclerView.ViewHolder(itemView) {
+        val binding = ItemVragenlijstBinding.bind(itemView)
 
+        fun databind(vragen: Vragenlijst) {
+            binding.tvVragenlijst.text = vragen.vragenText
+        }
+
+    }
 }
