@@ -5,7 +5,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.madlevel2task2.databinding.ItemVragenlijstBinding
-import kotlinx.android.synthetic.main.item_vragenlijst.view.*
 
 class vragenAdapter(private val Vragen: List<Vragenlijst>) : RecyclerView.Adapter<vragenAdapter.ViewHolder>() {
 
